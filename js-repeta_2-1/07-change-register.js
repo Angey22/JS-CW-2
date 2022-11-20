@@ -3,27 +3,60 @@
  * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
  */
 
-const string = 'qWeRTzxCv';
+// 1-й вариант решения задачи:
+// Создаем переменную с исходной строкой подлежащей обработке
+const string = 'JavaScript';
+console.log('Исходная строка (1-й вариант) ->', string);
+
+// Разбиваем исходную строку на массив (с помощью метода "split()"), в котором каждый элемент будет соответствовать одному символу исходной строки и задаем этот массив в некую переменную
 const letters = string.split('');
+
+// Создаем "пустую" вспомогательную переменную, в которой будет производится "сшивка" массива букв, после его обработки
 let invertedString = '';
 
-console.log(letters);
-
+// Создаем цыкл для обработки массива с буквами
 for (const letter of letters) {
-  console.log(letter);
-
-  // if (letter === letter.toLowerCase()) {
-  //   console.log('Эта буква в нижнем регистре!!! - ', letter);
-
-  //   invertedString += letter.toUpperCase();
-  // } else {
-  //   console.log('Эта буква в верхнет регистре!!! - ', letter);
-  //   invertedString += letter.toLowerCase();
-  // }
-
-  const isEqual = letter === letter.toLowerCase();
-
-  invertedString += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+  // Задаем условие для проверки на наличие регистра маленьких букв
+  if (letter === letter.toLocaleLowerCase()) {
+// console.log('Эта буква в нижнем регистре!!! - ', letter);
+    
+      // Задаем правило преобразования и одновременно с этим - последовательной "сшивки" преобразованных букв в переменную
+    invertedString += letter.toUpperCase();
+  } else {
+// console.log('Эта буква в верхнет регистре!!! - ', letter);
+    
+    // Задаем условие для букв в верхнем регистре, и одновременно с этим - правило преобразования и сшивки в переменную
+    invertedString += letter.toLocaleLowerCase();
+  }
 }
 
-console.log('invertedString: ', invertedString);
+// Выводим в консоль финальный результат работы скрипта
+console.log('Преобразованная строка (1-й вариант) ->', invertedString);
+
+
+// 2-й вариант решения задачи:
+// Создаем переменную с исходной строкой подлежащей обработке
+const string2 = 'qWeRTzxCv';
+console.log('Исходная строка (2-й вариант) ->', string2);
+
+// Разбиваем исходную строку на массив (с помощью метода "split()"), в котором каждый элемент будет соответствовать одному символу исходной строки и задаем этот массив в некую переменную
+const letters2 = string2.split('');
+
+// Создаем "пустую" вспомогательную переменную, в которой будет производится "сшивка" массива букв, после его обработки
+let invertedString2 = '';
+
+// Создаем цыкл для обработки массива с буквами
+for (const letter of letters2) {
+  // По аналогии с 1-м вариантом задаем правила поиска и изменения маленьких букв на большие и больших - на маленькие, но используем для этого "тернарный оператор", а не "if"
+  // invertedString2 +=
+  //   letter === letter.toLowerCase()
+  //     ? letter.toUpperCase()
+  //     : letter.toLowerCase();
+  
+  // Еще один вариант записи тернарного оператора, с использованием дополнительной служебной переменной:
+  const isEqual = letter === letter.toLowerCase();
+  invertedString2 += isEqual ? letter.toUpperCase() : letter.toLowerCase();
+}
+
+// Выводим в консоль финальный результат работы скрипта
+console.log('Преобразованная строка (2-й вариант) ->', invertedString2);
