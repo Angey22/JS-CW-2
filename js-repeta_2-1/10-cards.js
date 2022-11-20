@@ -1,11 +1,11 @@
 /*
- * Работем с коллекцией карточек в trello
- * - Метод splice()
- * - Удалить
- * - Добавить
- * - Обновить
+ * Работем с коллекцией карточек в "trello":
+ * - метод splice()
+ * - удалить
+ * - добавить
+ * - обновить
  */
-
+// У нас есть набор условных карточек, которые находятся в массиве
 const cards = [
   'Карточка-1',
   'Карточка-2',
@@ -19,32 +19,43 @@ console.table(cards);
 /*
  * Удаление (по индексу), метод indexOf()
  */
+// Метод "indexOf()" позволяет найти индекс элемента в массиве по его содержанию
 
-// const cardToRemove = 'Карточка-3';
-// const index = cards.indexOf(cardToRemove);
-// console.log(index);
+// Задаем переменной содержание, которое нужно найти в переменной
+const cardToRemove = 'Карточка-3';
+// Ищем индекс элемента массива с соответствующим содержанием
+const index = cards.indexOf(cardToRemove);
+// Выводим информацию о найденом индексе
+console.log('Индекс искомой карточки:', index);
 
-// cards.splice(index, 1);
+// Удаляем элемент по индексу из массива, с помощью метода "splice()"
+cards.splice(index, 1);
 
-// console.table(cards);
+console.table(cards);
+
+// Особенностью метода "splice()" является то, что он возвращает массив удаленных элементов.
 
 /*
  * Добавление (по индексу)
  */
-// const cardToInsert = 'Карточка-6';
-// const index = 3;
 
-// cards.splice(index, 0, cardToInsert);
-// console.table(cards);
+const cardToInsert = 'Карточка-X';
+const index2 = 3;
+
+// Вставка элемента с помощью метода "splice()"
+cards.splice(index2, 0, cardToInsert);
+// Первое значение - индекс места массиве, куда вставляем; Второе значение - "0", говорит о том, что ничего не удаляем (если будет положительное число - то удалится количество элементов, заданых этим числом)
+
+console.table(cards);
 
 /*
  * Обновление (по индексу)
  */
 const cardToUpdate = 'Карточка-4';
-const index = cards.indexOf(cardToUpdate);
+const index3 = cards.indexOf(cardToUpdate);
 
-console.log(index);
+console.log(index3);
 
-cards.splice(index, 1, 'Обновленная карточка-4');
+cards.splice(index3, 1, 'Обновленная карточка-4');
 
 console.table(cards);
