@@ -1,8 +1,8 @@
 /*
- * Функции
- * - Функциональные выражения
- * - Аргументы и параметры
- * - Возврат значения
+ * Функции:
+ * - функциональные выражения;
+ * - аргументы и параметры;
+ * - возврат значения.
  */
 
 const add = function (x, y) {
@@ -13,14 +13,15 @@ const add = function (x, y) {
   return x + y;
 };
 
-// const r1 = add(5, 3);
-// console.log('r1: ', r1);
+const r1 = add(5, 3);
+console.log('r1: ', r1);
 
 // const r2 = add(10, 15);
 // console.log('r2: ', r2);
 
 // const r3 = add(30, 50);
 // console.log('r3: ', r3);
+
 
 // const fn = function (value) {
 //   console.log(1);
@@ -37,32 +38,34 @@ const add = function (x, y) {
 
 // console.log('Результат функции: ', fn(1000));
 
+
 /*
  * - Стек вызовов
  * - Stack trace и поиск ошибок
  */
-const fnA = function () {
-  console.log('Выполняется функция A');
-};
 
-const fnB = function () {
-  console.log('Выполняется функция B');
-};
+// const fnA = function () {
+//   console.log('Выполняется функция A');
+// };
 
-const fnC = function () {
-  console.log('Выполняется функция C');
-};
+// const fnB = function () {
+//   console.log('Выполняется функция B');
+// };
 
-// console.log('Лог перед вызовом функции A');
+// const fnC = function () {
+//   console.log('Выполняется функция C');
+// };
 
-fnA();
+// // console.log('Лог перед вызовом функции A');
 
-// console.log('Лог после вызова функции A');
+// fnA();
 
-// console.log('Лог перед вызовом функции B');
-fnB();
-// console.log('Лог после вызова функции B');
+// // console.log('Лог после вызова функции A');
 
-// console.log('Лог перед вызовом функции C');
-fnC();
-// console.log('Лог после вызова функции C');
+// // console.log('Лог перед вызовом функции B');
+// fnB();
+// // console.log('Лог после вызова функции B');
+
+// // console.log('Лог перед вызовом функции C');
+// fnC();
+// // console.log('Лог после вызова функции C');
