@@ -157,3 +157,22 @@ console.log(`Предложение после "инверсии" --> "${invertS
 // Напиши скрипт сортировки массива строк в алфавитном порядке по первой букве элемента.
 
 const langs = ['python', 'javascript', 'c++', 'haskel', 'php', 'ruby'];
+
+// Решение задачи с помощью метода "sort()"
+const LangsSorted = langs.sort();
+console.log('Метод "sort()" ->', LangsSorted);
+
+// Решение задачи с помощью метода "пузырьков"
+for (const i in langs) {
+    let wasSwap = false;
+    for (let j = 0; j < langs.length - 1 - i; j++) {
+        if (langs[j].charCodeAt(0) > langs[j + 1].charCodeAt(0)) {
+            const swap = langs[j];
+            langs[j] = langs[j + 1];
+            langs[j + 1] = swap;
+            wasSwap = true;
+        }
+        if (!wasSwap) break;
+    }
+}
+console.log('Метод "пузырьков" ->', langs);
