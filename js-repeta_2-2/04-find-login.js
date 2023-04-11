@@ -1,9 +1,12 @@
+//! Видео - 0:59:35...
+
 /*
  * Напиши функцию findLogin(allLogins, login) для поиска логина
  * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
  * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
  */
 
+//! Код скрипта (из предыдущего занятия) подлежащего преобразованию в функцию:
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 
 // const findLogin = function (allLogins, loginToFind) {
@@ -16,6 +19,7 @@ const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
 //   return `Пользователь ${loginToFind} не найден.`;
 // };
 
+//! Код функции:
 const findLogin = function (allLogins, loginToFind) {
   return allLogins.includes(loginToFind)
     ? `Пользователь ${loginToFind} найден.`
